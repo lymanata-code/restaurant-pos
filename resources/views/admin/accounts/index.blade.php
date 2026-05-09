@@ -15,7 +15,7 @@
     { data: 'account_code', name: 'account_code',  },
     { data: 'name', name: 'name',  },
     { data: 'account_type', name: 'account_type',  },
-    { data: 'is_active', name: 'is_active', width: '110px', , searchable: false },
+    { data: 'is_active', name: 'is_active', width: '110px', searchable: false },
 
     { data: 'actions', name: 'actions', width: '110px', searchable: false, orderable: false, className: 'text-end' }
 ]

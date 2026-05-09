@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'ម៉ាស៊ីនបោះពុម្ព',
     'create_title' => 'បន្ថែម',
     'edit_title' => 'កែប្រែ',

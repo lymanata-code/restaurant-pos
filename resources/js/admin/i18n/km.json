@@ -1,5 +1,6 @@
 {
     "accounts": {
+        "id": "#",
         "title": "គណនី",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -37,6 +38,7 @@
         "invalid_credentials": "ពាក្យសម្ងាត់មិនត្រឹមត្រូវ"
     },
     "branches": {
+        "id": "#",
         "title": "សាខា",
         "subtitle": "គ្រប់គ្រងសាខាភោជនីយដ្ឋាន",
         "code": "លេខកូដ",
@@ -86,6 +88,7 @@
         "id": "លេខ"
     },
     "customers": {
+        "id": "#",
         "title": "អតិថិជន",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -102,6 +105,7 @@
         "notes": "កំណត់ចំណាំ"
     },
     "dining_tables": {
+        "id": "#",
         "title": "តុ",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -112,6 +116,7 @@
         "is_active": "សកម្ម"
     },
     "expenses": {
+        "id": "#",
         "title": "ចំណងជើង",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -130,6 +135,7 @@
         "id": "លេខ"
     },
     "inventory_categories": {
+        "id": "#",
         "title": "ប្រភេទស្តុក",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -217,6 +223,7 @@
         "notifications": "ការជូនដំណឹង"
     },
     "menu_categories": {
+        "id": "#",
         "title": "ប្រភេទម្ហូប",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -227,6 +234,7 @@
         "is_active": "សកម្ម"
     },
     "menu_items": {
+        "id": "#",
         "title": "ម្ហូប",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -274,6 +282,7 @@
         "id": "លេខ"
     },
     "payment_methods": {
+        "id": "#",
         "title": "វិធីបង់ប្រាក់",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -285,6 +294,7 @@
         "is_active": "សកម្ម"
     },
     "permissions": {
+        "id": "#",
         "title": "សិទ្ធិ",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -294,6 +304,7 @@
         "description": "ការពិពណ៌នា"
     },
     "printers": {
+        "id": "#",
         "title": "ម៉ាស៊ីនបោះពុម្ព",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -306,6 +317,7 @@
         "is_active": "សកម្ម"
     },
     "promotions": {
+        "id": "#",
         "title": "ការផ្សព្វផ្សាយ",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -328,6 +340,7 @@
         "id": "លេខ"
     },
     "roles": {
+        "id": "#",
         "title": "តួនាទី",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -337,6 +350,7 @@
         "is_system": "ប្រព័ន្ធ"
     },
     "staff": {
+        "id": "#",
         "title": "បុគ្គលិក",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -358,6 +372,7 @@
         "id": "លេខ"
     },
     "stock_items": {
+        "id": "#",
         "title": "ស្តុក",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -380,6 +395,7 @@
         "id": "លេខ"
     },
     "suppliers": {
+        "id": "#",
         "title": "អ្នកផ្គត់ផ្គង់",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -392,6 +408,7 @@
         "status": "ស្ថានភាព"
     },
     "tax_rates": {
+        "id": "#",
         "title": "អត្រាពន្ធ",
         "create_title": "បន្ថែមអត្រាពន្ធ",
         "edit_title": "កែប្រែអត្រាពន្ធ",
@@ -402,6 +419,7 @@
         "is_active": "សកម្ម"
     },
     "units": {
+        "id": "#",
         "title": "ឯកតា",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -411,6 +429,7 @@
         "is_base": "ឯកតាមូលដ្ឋាន"
     },
     "users": {
+        "id": "#",
         "title": "អ្នកប្រើប្រាស់",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",
@@ -422,6 +441,7 @@
         "status": "ស្ថានភាព"
     },
     "zones": {
+        "id": "#",
         "title": "តំបន់",
         "create_title": "បន្ថែម",
         "edit_title": "កែប្រែ",

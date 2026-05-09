@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Promotions',
     'create_title' => 'New Promotion',
     'edit_title' => 'Edit Promotion',

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Printers',
     'create_title' => 'New Printer',
     'edit_title' => 'Edit Printer',

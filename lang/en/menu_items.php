@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Menu Items',
     'create_title' => 'New Item',
     'edit_title' => 'Edit Item',

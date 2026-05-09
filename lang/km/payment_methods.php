@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'វិធីបង់ប្រាក់',
     'create_title' => 'បន្ថែម',
     'edit_title' => 'កែប្រែ',
