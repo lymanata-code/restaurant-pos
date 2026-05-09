@@ -1,0 +1,243 @@
+// ----------------------------------------------------------------------
+// Restaurant POS — Admin styles
+// Bundles: Bootstrap 5, Bootstrap Icons, DataTables (bs5), SweetAlert2,
+// flatpickr, Tom Select, simplebar, plus a few project tweaks.
+// ----------------------------------------------------------------------
+
+// Bootstrap 5
+@import "bootstrap/scss/bootstrap";
+
+// Bootstrap Icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// DataTables (Bootstrap 5)
+@import "datatables.net-bs5/css/dataTables.bootstrap5.css";
+@import "datatables.net-buttons-bs5/css/buttons.bootstrap5.css";
+@import "datatables.net-responsive-bs5/css/responsive.bootstrap5.css";
+
+// Plugins used in the layout
+@import "simplebar/dist/simplebar.css";
+@import "sweetalert2/dist/sweetalert2.css";
+@import "flatpickr/dist/flatpickr.css";
+@import "tom-select/dist/css/tom-select.bootstrap5.css";
+
+// PHPFlasher injects its own CSS at runtime via the @flasher_render directive.
+
+// ----------------------------------------------------------------------
+// Layout — sidebar + topbar + page content
+// Mimics the structure of the supplied admin_layout.blade.php / Skodash
+// ----------------------------------------------------------------------
+
+:root {
+    --pos-sidebar-width: 250px;
+    --pos-sidebar-bg: #ffffff;
+    --pos-sidebar-text: #5f6e7a;
+    --pos-sidebar-active: #0d6efd;
+    --pos-topbar-bg: #ffffff;
+    --pos-topbar-height: 60px;
+    --pos-content-bg: #f5f7fb;
+    --pos-border: #e6e9ee;
+    --pos-radius: 0.5rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: var(--pos-content-bg);
+    font-family: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #2d3748;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: var(--pos-sidebar-width) 1fr;
+    grid-template-rows: var(--pos-topbar-height) 1fr;
+    grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+}
+
+.top-header {
+    grid-area: topbar;
+    background: var(--pos-topbar-bg);
+    border-bottom: 1px solid var(--pos-border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.top-header .navbar {
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar-wrapper {
+    grid-area: sidebar;
+    background: var(--pos-sidebar-bg);
+    border-right: 1px solid var(--pos-border);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+
+    .sidebar-header {
+        height: var(--pos-topbar-height);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0 1rem;
+        border-bottom: 1px solid var(--pos-border);
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+        .logo-text {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--pos-sidebar-active);
+        }
+        .toggle-icon {
+            color: #8a94a3;
+            cursor: pointer;
+        }
+    }
+
+    .metismenu {
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem 0;
+
+        li {
+            position: relative;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.55rem 1rem;
+                color: var(--pos-sidebar-text);
+                text-decoration: none;
+                font-size: 0.95rem;
+
+                .parent-icon {
+                    width: 22px;
+                    text-align: center;
+                    font-size: 1.05rem;
+                }
+                .menu-title { flex: 1; }
+
+                &:hover, &.active {
+                    color: var(--pos-sidebar-active);
+                    background: rgba(13, 110, 253, 0.05);
+                }
+            }
+            &.mm-active > a {
+                color: var(--pos-sidebar-active);
+                background: rgba(13, 110, 253, 0.08);
+            }
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                background: rgba(0, 0, 0, 0.02);
+                a {
+                    padding-left: 2.6rem;
+                    font-size: 0.88rem;
+                }
+            }
+        }
+    }
+}
+
+.page-content {
+    grid-area: content;
+    padding: 1.25rem;
+    min-width: 0;
+}
+
+.page-breadcrumb .breadcrumb-title {
+    font-weight: 600;
+    border-right: 1px solid var(--pos-border);
+}
+
+.card {
+    border: 1px solid var(--pos-border);
+    border-radius: var(--pos-radius);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+// DataTable Bootstrap5 fixed pagination tweak
+.dataTables_wrapper {
+    .dataTables_paginate .pagination {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .dataTables_length, .dataTables_filter, .dataTables_info {
+        margin-bottom: 0.5rem;
+    }
+    .dataTables_filter input {
+        border-radius: 0.375rem;
+        border: 1px solid var(--pos-border);
+        padding: 0.3rem 0.6rem;
+        margin-left: 0.5rem;
+    }
+    .dataTables_length select { border-radius: 0.375rem; }
+}
+
+// Tom Select inside Bootstrap form
+.ts-control { min-height: calc(1.5em + .75rem + 2px); }
+
+// Flatpickr inside Bootstrap form
+.flatpickr-input[readonly] { background-color: #fff; }
+
+// Sidebar mobile
+@media (max-width: 991.98px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "topbar"
+            "content";
+    }
+    .sidebar-wrapper {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: var(--pos-sidebar-width);
+        height: 100vh;
+        z-index: 1050;
+        transition: left .25s ease;
+        &.show { left: 0; }
+    }
+    .overlay.nav-toggle-icon { display: none; }
+}
+
+// Misc
+.lang-switcher .dropdown-toggle::after { display: none; }
+.lang-switcher .lang-flag {
+    width: 22px; height: 22px; display: inline-block;
+    background: #eee; border-radius: 4px;
+    text-align: center; line-height: 22px; font-size: 0.75rem; font-weight: 700;
+}
+.lang-switcher .lang-flag.km { background: #f3a712; color: #fff; }
+.lang-switcher .lang-flag.en { background: #0d6efd; color: #fff; }
+
+.branch-switcher .form-select { min-width: 180px; }
+
+[data-loading="true"] { pointer-events: none; opacity: .6; }
+
+// SweetAlert + Flasher z-index above bootstrap modals
+.swal2-container { z-index: 2000 !important; }
+.fl-flasher       { z-index: 2100 !important; }
