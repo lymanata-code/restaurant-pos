@@ -33,6 +33,7 @@ Route::middleware(['admin.auth'])->group(function () {
 
     // Per-module routes — keep one file per feature for separation.
     foreach ([
+        'pos',
         'branches',
         'tax-rates',
         'payment-methods',

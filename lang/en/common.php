@@ -16,4 +16,8 @@ return [
     'saved_success' => 'Saved successfully.',
     'deleted_success' => 'Deleted successfully.',
     'error_generic' => 'Something went wrong.',
+    'today' => 'Today',
+    'manage' => 'Manage',
+    'unzoned' => 'Unzoned',
+    'view' => 'View',
 ];
