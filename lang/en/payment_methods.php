@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Payment Methods',
     'create_title' => 'New Payment Method',
     'edit_title' => 'Edit Payment Method',

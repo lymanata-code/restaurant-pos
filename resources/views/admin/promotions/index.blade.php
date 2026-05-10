@@ -15,7 +15,7 @@
     { data: 'name', name: 'name',  },
     { data: 'promotion_type', name: 'promotion_type',  },
     { data: 'discount_type', name: 'discount_type',  },
-    { data: 'is_active', name: 'is_active', width: '110px', , searchable: false },
+    { data: 'is_active', name: 'is_active', width: '110px', searchable: false },
 
     { data: 'actions', name: 'actions', width: '110px', searchable: false, orderable: false, className: 'text-end' }
 ]

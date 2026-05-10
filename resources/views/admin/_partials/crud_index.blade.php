@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const table = $('#dt').DataTable({
         ajax: { url: ajaxUrl },
         columns: @yield('columns_json'),
-        order: @yield('default_order', '[[0, "desc"]]'),
+        order: @hasSection('default_order')@yield('default_order')@else[[0, "desc"]]@endif,
     });
 });
 </script>

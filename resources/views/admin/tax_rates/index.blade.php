@@ -15,7 +15,7 @@
     { data: 'name', name: 'name',  },
     { data: 'rate', name: 'rate',  },
     { data: 'type', name: 'type',  },
-    { data: 'is_active', name: 'is_active', width: '110px', , searchable: false },
+    { data: 'is_active', name: 'is_active', width: '110px', searchable: false },
 
     { data: 'actions', name: 'actions', width: '110px', searchable: false, orderable: false, className: 'text-end' }
 ]

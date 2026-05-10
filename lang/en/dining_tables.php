@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Dining Tables',
     'create_title' => 'New Table',
     'edit_title' => 'Edit Table',

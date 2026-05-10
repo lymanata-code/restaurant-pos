@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Tax Rates',
     'create_title' => 'New Tax Rate',
     'edit_title' => 'Edit Tax Rate',

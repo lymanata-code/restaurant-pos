@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Units',
     'create_title' => 'New Unit',
     'edit_title' => 'Edit Unit',

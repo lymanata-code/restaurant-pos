@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'អ្នកប្រើប្រាស់',
     'create_title' => 'បន្ថែម',
     'edit_title' => 'កែប្រែ',
