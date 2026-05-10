@@ -10,6 +10,14 @@
             'route' => 'admin.dashboard',
         ],
         [
+            'title' => 'menu.pos',
+            'icon' => 'bi-cart3',
+            'children' => [
+                ['title' => 'menu.pos_terminal', 'route' => 'admin.pos.terminal'],
+                ['title' => 'menu.pos_register', 'route' => 'admin.pos.register'],
+            ],
+        ],
+        [
             'title' => 'menu.system',
             'icon' => 'bi-gear',
             'children' => [

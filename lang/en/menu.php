@@ -48,4 +48,7 @@ return [
     'reports' => 'Reports',
     'audit_logs' => 'Audit Logs',
     'notifications' => 'Notifications',
+    'pos' => 'POS',
+    'pos_terminal' => 'POS Terminal',
+    'pos_register' => 'Cash Register',
 ];

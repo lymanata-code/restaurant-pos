@@ -78,7 +78,11 @@
         "no": "No",
         "saved_success": "Saved successfully.",
         "deleted_success": "Deleted successfully.",
-        "error_generic": "Something went wrong."
+        "error_generic": "Something went wrong.",
+        "today": "Today",
+        "manage": "Manage",
+        "unzoned": "Unzoned",
+        "view": "View"
     },
     "coupons": {
         "title": "Coupons",
@@ -220,7 +224,10 @@
         "journal_entries": "Journal Entries",
         "reports": "Reports",
         "audit_logs": "Audit Logs",
-        "notifications": "Notifications"
+        "notifications": "Notifications",
+        "pos": "POS",
+        "pos_terminal": "POS Terminal",
+        "pos_register": "Cash Register"
     },
     "menu_categories": {
         "id": "#",
@@ -302,6 +309,15 @@
         "name": "Name",
         "slug": "Slug",
         "description": "Description"
+    },
+    "pos": {
+        "open_tabs": "Open Tabs",
+        "tables_grid": "Tables",
+        "no_tables_yet": "No tables seeded yet — set up dining tables to use the POS terminal.",
+        "no_categories_yet": "No menu categories yet.",
+        "no_open_tabs": "No open tabs right now.",
+        "quick_actions": "Quick Actions",
+        "new_counter_sale": "New Counter Sale"
     },
     "printers": {
         "id": "#",
