@@ -48,4 +48,7 @@ return [
     'reports' => 'របាយការណ៍',
     'audit_logs' => 'កំណត់ហេតុសវនកម្ម',
     'notifications' => 'ការជូនដំណឹង',
+    'pos' => 'POS',
+    'pos_terminal' => 'ប៉ះម៉ាស៊ីន POS',
+    'pos_register' => 'ប្រអប់សាច់ប្រាក់',
 ];

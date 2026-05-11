@@ -78,7 +78,11 @@
         "no": "ទេ",
         "saved_success": "បានរក្សាទុកដោយជោគជ័យ។",
         "deleted_success": "បានលុបដោយជោគជ័យ។",
-        "error_generic": "មានបញ្ហាបានកើតឡើង។"
+        "error_generic": "មានបញ្ហាបានកើតឡើង។",
+        "today": "ថ្ងៃនេះ",
+        "manage": "គ្រប់គ្រង",
+        "unzoned": "គ្មានតំបន់",
+        "view": "មើល"
     },
     "coupons": {
         "title": "គូប៉ុង",
@@ -220,7 +224,10 @@
         "journal_entries": "កំណត់ហេតុ",
         "reports": "របាយការណ៍",
         "audit_logs": "កំណត់ហេតុសវនកម្ម",
-        "notifications": "ការជូនដំណឹង"
+        "notifications": "ការជូនដំណឹង",
+        "pos": "POS",
+        "pos_terminal": "ប៉ះម៉ាស៊ីន POS",
+        "pos_register": "ប្រអប់សាច់ប្រាក់"
     },
     "menu_categories": {
         "id": "#",
@@ -302,6 +309,15 @@
         "name": "ឈ្មោះ",
         "slug": "លេខកូដ",
         "description": "ការពិពណ៌នា"
+    },
+    "pos": {
+        "open_tabs": "វិក្កយបត្របើក",
+        "tables_grid": "តុ",
+        "no_tables_yet": "មិនទាន់មានតុណាមួយឡើយ — សូមបង្កើតតុមុននឹងប្រើប៉ះម៉ាស៊ីន POS។",
+        "no_categories_yet": "មិនទាន់មានប្រភេទមុខម្ហូប។",
+        "no_open_tabs": "មិនមានវិក្កយបត្របើកទេឥឡូវនេះ។",
+        "quick_actions": "សកម្មភាពរហ័ស",
+        "new_counter_sale": "លក់ផ្ទាល់"
     },
     "printers": {
         "id": "#",
