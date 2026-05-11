@@ -20,4 +20,8 @@ return [
     'manage' => 'Manage',
     'unzoned' => 'Unzoned',
     'view' => 'View',
+    'more' => 'More',
+    'remove' => 'Remove',
+    'undo' => 'Undo',
+    'print' => 'Print',
 ];
