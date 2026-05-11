@@ -25,7 +25,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Schema::disableForeignKeyConstraints();
 
         /*
         |--------------------------------------------------------------------------
@@ -1090,12 +1090,12 @@ return new class extends Migration
             ['name' => 'Piece', 'symbol' => 'pcs', 'unit_type' => 'piece', 'is_base' => true, 'created_at' => now(), 'updated_at' => now()],
         ]);
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        Schema::enableForeignKeyConstraints();
     }
 
     public function down(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Schema::disableForeignKeyConstraints();
 
         $tables = [
             'backups',
@@ -1174,6 +1174,6 @@ return new class extends Migration
             Schema::dropIfExists($table);
         }
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        Schema::enableForeignKeyConstraints();
     }
 };
