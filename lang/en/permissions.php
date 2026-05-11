@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Permissions',
     'create_title' => 'New Permission',
     'edit_title' => 'Edit Permission',

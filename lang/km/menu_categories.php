@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'ប្រភេទម្ហូប',
     'create_title' => 'បន្ថែម',
     'edit_title' => 'កែប្រែ',

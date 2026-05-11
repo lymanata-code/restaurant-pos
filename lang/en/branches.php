@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Branches',
     'subtitle' => 'Manage restaurant branches / locations',
     'code' => 'Code',

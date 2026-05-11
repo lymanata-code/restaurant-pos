@@ -771,10 +771,11 @@ foreach ($modules as $m) {
     $columns = '';
     foreach ($m['columns'] as $i => $col) {
         $width = $col[2] ?? null;
-        $widthAttr = $width ? "width: '$width', " : '';
         $thead .= "    <th>{{ __('$slugUnder.{$col[1]}') }}</th>\n";
-        $searchable = (count($col) >= 4 && $col[3] === true) ? ', searchable: false' : '';
-        $columns .= "    { data: '{$col[0]}', name: '{$col[0]}', {$widthAttr}{$searchable} },\n";
+        $parts = ["data: '{$col[0]}'", "name: '{$col[0]}'"];
+        if ($width) $parts[] = "width: '$width'";
+        if (count($col) >= 4 && $col[3] === true) $parts[] = "searchable: false";
+        $columns .= "    { " . implode(', ', $parts) . " },\n";
     }
     $indexBlade = strtr($indexTpl, [
         '__THEAD__' => rtrim($thead, "\n"),

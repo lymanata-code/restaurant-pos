@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'ការផ្សព្វផ្សាយ',
     'create_title' => 'បន្ថែម',
     'edit_title' => 'កែប្រែ',

@@ -1,5 +1,6 @@
 {
     "accounts": {
+        "id": "#",
         "title": "Accounts",
         "create_title": "New Account",
         "edit_title": "Edit Account",
@@ -37,6 +38,7 @@
         "invalid_credentials": "Invalid credentials"
     },
     "branches": {
+        "id": "#",
         "title": "Branches",
         "subtitle": "Manage restaurant branches \/ locations",
         "code": "Code",
@@ -76,7 +78,11 @@
         "no": "No",
         "saved_success": "Saved successfully.",
         "deleted_success": "Deleted successfully.",
-        "error_generic": "Something went wrong."
+        "error_generic": "Something went wrong.",
+        "today": "Today",
+        "manage": "Manage",
+        "unzoned": "Unzoned",
+        "view": "View"
     },
     "coupons": {
         "title": "Coupons",
@@ -86,6 +92,7 @@
         "id": "ID"
     },
     "customers": {
+        "id": "#",
         "title": "Customers",
         "create_title": "New Customer",
         "edit_title": "Edit Customer",
@@ -102,6 +109,7 @@
         "notes": "Notes"
     },
     "dining_tables": {
+        "id": "#",
         "title": "Dining Tables",
         "create_title": "New Table",
         "edit_title": "Edit Table",
@@ -112,6 +120,7 @@
         "is_active": "Active"
     },
     "expenses": {
+        "id": "#",
         "title": "Title",
         "create_title": "New Expense",
         "edit_title": "Edit Expense",
@@ -130,6 +139,7 @@
         "id": "ID"
     },
     "inventory_categories": {
+        "id": "#",
         "title": "Inventory Categories",
         "create_title": "New Category",
         "edit_title": "Edit Category",
@@ -214,9 +224,13 @@
         "journal_entries": "Journal Entries",
         "reports": "Reports",
         "audit_logs": "Audit Logs",
-        "notifications": "Notifications"
+        "notifications": "Notifications",
+        "pos": "POS",
+        "pos_terminal": "POS Terminal",
+        "pos_register": "Cash Register"
     },
     "menu_categories": {
+        "id": "#",
         "title": "Menu Categories",
         "create_title": "New Category",
         "edit_title": "Edit Category",
@@ -227,6 +241,7 @@
         "is_active": "Active"
     },
     "menu_items": {
+        "id": "#",
         "title": "Menu Items",
         "create_title": "New Item",
         "edit_title": "Edit Item",
@@ -274,6 +289,7 @@
         "id": "ID"
     },
     "payment_methods": {
+        "id": "#",
         "title": "Payment Methods",
         "create_title": "New Payment Method",
         "edit_title": "Edit Payment Method",
@@ -285,6 +301,7 @@
         "is_active": "Active"
     },
     "permissions": {
+        "id": "#",
         "title": "Permissions",
         "create_title": "New Permission",
         "edit_title": "Edit Permission",
@@ -293,7 +310,17 @@
         "slug": "Slug",
         "description": "Description"
     },
+    "pos": {
+        "open_tabs": "Open Tabs",
+        "tables_grid": "Tables",
+        "no_tables_yet": "No tables seeded yet — set up dining tables to use the POS terminal.",
+        "no_categories_yet": "No menu categories yet.",
+        "no_open_tabs": "No open tabs right now.",
+        "quick_actions": "Quick Actions",
+        "new_counter_sale": "New Counter Sale"
+    },
     "printers": {
+        "id": "#",
         "title": "Printers",
         "create_title": "New Printer",
         "edit_title": "Edit Printer",
@@ -306,6 +333,7 @@
         "is_active": "Active"
     },
     "promotions": {
+        "id": "#",
         "title": "Promotions",
         "create_title": "New Promotion",
         "edit_title": "Edit Promotion",
@@ -328,6 +356,7 @@
         "id": "ID"
     },
     "roles": {
+        "id": "#",
         "title": "Roles",
         "create_title": "New Role",
         "edit_title": "Edit Role",
@@ -337,6 +366,7 @@
         "is_system": "System"
     },
     "staff": {
+        "id": "#",
         "title": "Staff",
         "create_title": "New Staff",
         "edit_title": "Edit Staff",
@@ -358,6 +388,7 @@
         "id": "ID"
     },
     "stock_items": {
+        "id": "#",
         "title": "Stock Items",
         "create_title": "New Stock Item",
         "edit_title": "Edit Stock Item",
@@ -380,6 +411,7 @@
         "id": "ID"
     },
     "suppliers": {
+        "id": "#",
         "title": "Suppliers",
         "create_title": "New Supplier",
         "edit_title": "Edit Supplier",
@@ -392,6 +424,7 @@
         "status": "Status"
     },
     "tax_rates": {
+        "id": "#",
         "title": "Tax Rates",
         "create_title": "New Tax Rate",
         "edit_title": "Edit Tax Rate",
@@ -402,6 +435,7 @@
         "is_active": "Active"
     },
     "units": {
+        "id": "#",
         "title": "Units",
         "create_title": "New Unit",
         "edit_title": "Edit Unit",
@@ -411,6 +445,7 @@
         "is_base": "Base Unit"
     },
     "users": {
+        "id": "#",
         "title": "Users",
         "create_title": "New User",
         "edit_title": "Edit User",
@@ -422,6 +457,7 @@
         "status": "Status"
     },
     "zones": {
+        "id": "#",
         "title": "Zones",
         "create_title": "New Zone",
         "edit_title": "Edit Zone",

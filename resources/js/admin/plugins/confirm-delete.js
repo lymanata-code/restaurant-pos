@@ -46,9 +46,8 @@ async function handler(e) {
 
     try {
         const res = await window.axios.delete(url);
-        const table = trigger.closest('.dataTables_wrapper')?.querySelector('table');
-        if (table && window.$ && $.fn.dataTable?.isDataTable(table)) {
-            $(table).DataTable().ajax.reload(null, false);
+        if (window.$ && $.fn.dataTable) {
+            $.fn.dataTable.tables({ visible: true, api: true }).ajax.reload(null, false);
         }
         if (res?.data?.message) {
             Swal.fire({

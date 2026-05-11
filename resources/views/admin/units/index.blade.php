@@ -15,7 +15,7 @@
     { data: 'name', name: 'name',  },
     { data: 'symbol', name: 'symbol',  },
     { data: 'unit_type', name: 'unit_type',  },
-    { data: 'is_base', name: 'is_base', width: '110px', , searchable: false },
+    { data: 'is_base', name: 'is_base', width: '110px', searchable: false },
 
     { data: 'actions', name: 'actions', width: '110px', searchable: false, orderable: false, className: 'text-end' }
 ]

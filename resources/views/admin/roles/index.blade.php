@@ -13,7 +13,7 @@
     { data: 'id', name: 'id', width: '60px',  },
     { data: 'name', name: 'name',  },
     { data: 'slug', name: 'slug',  },
-    { data: 'is_system', name: 'is_system', width: '110px', , searchable: false },
+    { data: 'is_system', name: 'is_system', width: '110px', searchable: false },
 
     { data: 'actions', name: 'actions', width: '110px', searchable: false, orderable: false, className: 'text-end' }
 ]

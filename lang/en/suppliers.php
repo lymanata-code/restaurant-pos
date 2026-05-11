@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Suppliers',
     'create_title' => 'New Supplier',
     'edit_title' => 'Edit Supplier',

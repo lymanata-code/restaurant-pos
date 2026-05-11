@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Stock Items',
     'create_title' => 'New Stock Item',
     'edit_title' => 'Edit Stock Item',

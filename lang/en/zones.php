@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'id' => '#',
     'title' => 'Zones',
     'create_title' => 'New Zone',
     'edit_title' => 'Edit Zone',
