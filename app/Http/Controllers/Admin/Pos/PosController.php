@@ -3,36 +3,84 @@
 namespace App\Http\Controllers\Admin\Pos;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\DiningTable;
 use App\Models\MenuCategory;
+use App\Models\MenuItem;
 use App\Models\Order;
 use Illuminate\View\View;
 
 class PosController extends Controller
 {
     /**
-     * POS Terminal — entry point for the waiter / cashier ordering UI.
+     * POS Terminal — classic two-pane register UI:
+     *   left:  customer/price-option toolbar -> search -> cart line-items -> totals
+     *   right: tabs (Category / Featured / All) over a product grid
+     *   bottom: payment / draft action bar
      *
-     * Phase 1 ships the navigation shell only: tables grid, today's stats,
-     * and the menu category breakdown. The full ticket-entry interaction
-     * (add item, modifier picker, payment, send-to-kitchen) is intentionally
-     * out of scope of the initial scaffold — see PR #1 description.
+     * Server side just provides the data; the cart + checkout flow is wired
+     * client-side as a Vue island so the heavy interaction (add line, change
+     * qty, discount, tax, change tab, filter by category) doesn't round-trip.
+     * Submitting the order to the backend is intentionally deferred — Phase 2.
      */
     public function terminal(): View
     {
-        $tables = DiningTable::orderBy('table_no')->take(24)->get();
+        $categories = MenuCategory::withCount('items')
+            ->where('is_active', true)
+            ->orderBy('sort_order')
+            ->orderBy('name')
+            ->get();
 
-        $categories = MenuCategory::withCount('items')->orderBy('sort_order')->get();
+        // Featured = combo items + top-of-list per category (simple, deterministic).
+        $featuredItems = MenuItem::query()
+            ->where('is_available', true)
+            ->where('status', 'active')
+            ->where(function ($q) {
+                $q->where('is_combo', true)
+                    ->orWhere('sort_order', '>=', 1);
+            })
+            ->orderByDesc('is_combo')
+            ->orderBy('sort_order')
+            ->limit(24)
+            ->get();
+
+        $items = MenuItem::query()
+            ->with('category:id,name')
+            ->where('is_available', true)
+            ->where('status', 'active')
+            ->orderBy('sort_order')
+            ->orderBy('name')
+            ->limit(48)
+            ->get();
+
+        $customers = Customer::query()
+            ->where('status', 'active')
+            ->orderBy('name')
+            ->limit(200)
+            ->get(['id', 'name', 'customer_code', 'phone']);
+
+        $tables = DiningTable::query()
+            ->where('is_active', true)
+            ->orderBy('table_no')
+            ->limit(200)
+            ->get(['id', 'table_no', 'capacity', 'status']);
+
+        $priceOptions = config('pos.price_options', [
+            'retail' => 'Retail',
+            'member' => 'Member',
+            'wholesale' => 'Wholesale',
+        ]);
 
         $openStatuses = ['pending', 'in_kitchen', 'ready', 'served'];
 
         $stats = [
             'orders_today' => Order::withoutGlobalScope('branch')->whereDate('created_at', today())->count(),
             'open_tabs'    => Order::withoutGlobalScope('branch')->whereIn('status', $openStatuses)->count(),
-            'tables_total' => DiningTable::count(),
         ];
 
-        return view('admin.pos.terminal', compact('tables', 'categories', 'stats'));
+        return view('admin.pos.terminal', compact(
+            'categories', 'featuredItems', 'items', 'customers', 'tables', 'priceOptions', 'stats'
+        ));
     }
 
     /**

@@ -88,7 +88,13 @@ window.$t = (key, fallback = key) => {
 
 const pageLoaders = import.meta.glob('./admin/pages/**/*.vue');
 
+let currentVueApp = null;
+
 async function mountVueIsland() {
+    if (currentVueApp) {
+        try { currentVueApp.unmount(); } catch (_e) { /* ignore */ }
+        currentVueApp = null;
+    }
     const root = document.getElementById('app');
     if (!root) return null;
     const pageKey = root.dataset.page;
@@ -104,6 +110,7 @@ async function mountVueIsland() {
     app.use(i18n);
     app.config.globalProperties.$http = axios;
     app.mount(root);
+    currentVueApp = app;
     return app;
 }
 
@@ -126,6 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
         initFlatpickrAll();
         initTomSelectAll();
         initConfirmDelete();
+    });
+
+    // Re-mount Vue islands after a Blade-aware locale swap (the old #app
+    // node is destroyed when <main> innerHTML is replaced).
+    document.addEventListener('pos:locale-changed', () => {
+        mountVueIsland();
     });
 });
 
