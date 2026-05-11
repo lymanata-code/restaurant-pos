@@ -51,11 +51,20 @@ export async function applyLocale(i18n, locale) {
     window.localStorage.setItem(STORAGE_KEY, locale);
     if (i18n) i18n.global.locale.value = locale;
 
+    // Pages outside the admin shell (for example the login screen) do not
+    // expose swappable regions, so use a query-param reload that SetLocale
+    // will persist into the session.
+    if (!hasSwappableShell()) {
+        reloadWithLocale(locale);
+        return;
+    }
+
     // Tell server first so the next render uses the new locale.
     try {
         await window.axios.post('/admin/locale', { locale });
     } catch {
-        /* offline / not authenticated — ignore, page swap will still try */
+        reloadWithLocale(locale);
+        return;
     }
 
     // Soft-swap the rendered Blade fragments using the same URL.
@@ -63,6 +72,8 @@ export async function applyLocale(i18n, locale) {
         await softReloadShell(locale);
     } catch (err) {
         console.error('[i18n] soft reload failed', err);
+        reloadWithLocale(locale);
+        return;
     }
 
     // Update [data-i18n] for any client-only static markup.
@@ -84,6 +95,16 @@ export async function applyLocale(i18n, locale) {
     }
 
     document.dispatchEvent(new CustomEvent('pos:locale-changed', { detail: { locale } }));
+}
+
+function hasSwappableShell() {
+    return SWAPPABLE_SELECTORS.some((sel) => document.querySelector(sel));
+}
+
+function reloadWithLocale(locale) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', locale);
+    window.location.assign(url.toString());
 }
 
 async function softReloadShell(locale) {

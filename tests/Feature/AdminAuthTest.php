@@ -25,6 +25,18 @@ class AdminAuthTest extends TestCase
             ->assertJson(['message' => 'Unauthenticated.']);
     }
 
+    public function test_login_page_accepts_lang_query_and_persists_khmer_locale_for_guests(): void
+    {
+        $this->seed(RestaurantPosAllInOneSeeder::class);
+
+        $response = $this->get(route('admin.login', ['lang' => 'km']));
+
+        $response->assertOk();
+        $response->assertSeeText('ចូលគណនីរបស់អ្នក');
+        $response->assertSeeText('ចូលគណនី');
+        $this->assertSame('km', session('locale'));
+    }
+
     public function test_user_can_log_in_with_username_and_login_history_is_recorded(): void
     {
         $this->seed(RestaurantPosAllInOneSeeder::class);

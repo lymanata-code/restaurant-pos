@@ -23,6 +23,14 @@
 
 // PHPFlasher injects its own CSS at runtime via the @flasher_render directive.
 
+@font-face {
+    font-family: "Noto Sans Khmer Local";
+    src: url("/assets/backend/fonts/NotoSansKhmer.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
 // ----------------------------------------------------------------------
 // Layout — sidebar + topbar + page content
 // Mimics the structure of the supplied admin_layout.blade.php / Skodash
@@ -38,6 +46,10 @@
     --pos-content-bg: #f5f7fb;
     --pos-border: #e6e9ee;
     --pos-radius: 0.5rem;
+    --pos-font-sans: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --pos-font-khmer:
+        "Noto Sans Khmer Local", "Noto Sans Khmer", "Khmer OS System",
+        sans-serif;
 }
 
 html,
@@ -47,13 +59,19 @@ body {
 
 body {
     background: var(--pos-content-bg);
-    font-family:
-        "Roboto",
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        sans-serif;
+    font-family: var(--pos-font-sans);
     color: #2d3748;
+}
+
+html[lang="km"] body {
+    font-family: var(--pos-font-khmer), var(--pos-font-sans);
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
 
 .wrapper {
